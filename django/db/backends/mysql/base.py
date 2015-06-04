@@ -359,9 +359,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
         return False
 
     def _cursor(self):
-        new_connection = False
         if not self._valid_connection():
-            new_connection = True
             kwargs = {
                 'conv': django_conversions,
                 'charset': 'utf8',
